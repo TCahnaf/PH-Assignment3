@@ -6,6 +6,9 @@
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="index.js" defer></script>
+     
+
   </head>
     <title>Bangladesh Emergency Service Directory</title>
 
@@ -24,11 +27,11 @@
         <p id="heart-count" class = "font-extrabold">0</p>
         <img src="./assets/heart.png" class = "w-[30px] h-[30px]" alt="heart-logo">
       </div>
-      <div class = "bg-[#F5FFF6] flex items-center justify-center w-[123px] h-[52px] px-3 py-3 gap-2">
+       <div class = "bg-[#F5FFF6] flex items-center justify-center w-[123px] h-[52px] px-3 py-3 gap-2">
         <p id = "coin-count" class = "font-extrabold">100</p>
         <img src="./assets/coin.png" class = "w-[30px] h-[30px]" alt="coin-logo">
-      </div>
-      <button class="bg-[#00A63E] w-[127px] h-[52px] rounded-3xl"><span class = "text-white">2 copy</span></button>
+        </div>
+      <button class = "bg-[#00A63E] w-[127px] h-[52px] rounded-3xl text-white"><span id = "copy-count">0</span> copy</button>
       </div>
     </nav>
   </header>
@@ -137,7 +140,7 @@
         <h1 class = "text-3xl font-extrabold mb-1">106</h1>
         <p class  ="bg-[#F2F2F2] px-[16px] py-[6px] rounded-2xl w-[73px] h-[37px] mb-7">Govt.</p>
         <div class = "flex gap-2">
-        <button id = "copy-btn" class = "border border-gray-300 flex gap-2 items-center justify-center w-full h-[40px] bg-white p-4 text-[#5C5C5C] rounded-2xl"><i class="fa-regular fa-copy"></i>Copy</button>
+        <button  class = "copy-btn border border-gray-300 flex gap-2 items-center justify-center w-full h-[40px] bg-white p-4 text-[#5C5C5C] rounded-2xl"><i class="fa-regular fa-copy"></i>Copy</button>
         <button class = "call-btn flex gap-2 items-center justify-center w-full h-[40px] bg-[#00A63E] p-4 text-white rounded-2xl"><i class="fa-solid fa-phone"></i>Call</button>
       </div>
       </div>
@@ -205,6 +208,11 @@
           <button id = "clear-button" class="bg-[#00A63E] w-[114px] h-[52px] rounded-3xl text-white">Clear</button>
           </div>
           </div>
+
+          <div id = "dynamic-container" class = "flex flex-col gap-4">
+
+
+          </div>
           
 
         
@@ -223,7 +231,7 @@
 
   </main>
     
-  <script src = "index.js"></script>
+
 </body>
 </html>
 

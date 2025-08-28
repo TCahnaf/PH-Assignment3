@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", function(){
 
 function captureElementID(id){
     return document.getElementById(id);
@@ -31,7 +31,8 @@ for(const element of captureElementClasses("call-btn")){
     element.addEventListener('click', function(e){
         let coinCount = numberConvertedElementID("coin-count");
         coinCount -= 20;
-        const grandparent = e.target.parentElement.parentElement;
+        const element = e.currentTarget;
+        const grandparent = element.parentElement.parentElement;
         const serviceName = grandparent.getElementsByTagName("h1")[0].innerText;
         const serviceNumber = grandparent.getElementsByTagName("h1")[1].innerText;
      
@@ -45,7 +46,7 @@ for(const element of captureElementClasses("call-btn")){
         }
         captureElementID("coin-count").innerText = coinCount;
         
-        const historyLog = captureElementID("history-log");
+        const historyLog = captureElementID("dynamic-container");
         
         const timeStamp = new Date()
   .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true })
@@ -63,20 +64,42 @@ for(const element of captureElementClasses("call-btn")){
         <p>${timeStamp}</p>
         </div>
         `
+      historyLog.appendChild(logContent);
+    
+       
+    })
+}
 
-        historyLog.appendChild(logContent);
-        document.getElementById("clear-button").addEventListener('click', function(){
-            logContent.innerHTML = "";
+document.getElementById("clear-button").addEventListener('click', function(){
+    const dynamicContent = captureElementID("dynamic-container")
+            dynamicContent.innerHTML = "";
 
 })
 
-       
-    })
+
+for(element of captureElementClasses("copy-btn")){
+    element.addEventListener('click', function(e){
+const grandparentOfElement = e.currentTarget.parentElement.parentElement
+const textToCopy = grandparentOfElement.getElementsByTagName("h1")[1].innerText;
+navigator.clipboard.writeText(textToCopy);
+alert(`Emergency hotline number ${textToCopy} has been copied !!!`)
+
+
+copyCount = numberConvertedElementID("copy-count");
+copyCount += 1;
+console.log(copyCount);
+document.getElementById("copy-count").innerText = copyCount;
+
+})
+
 }
 
 
 
 
+
+
+})
 
 
 
