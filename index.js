@@ -48,9 +48,8 @@ for(const element of captureElementClasses("call-btn")){
         
         const historyLog = captureElementID("dynamic-container");
         
-        const timeStamp = new Date()
-  .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true })
-  .toLowerCase();
+        const time= new Date ();
+        const timeStamp = time.toLocaleTimeString();
 
 
         let logContent = document.createElement("div");
@@ -100,9 +99,6 @@ document.getElementById("copy-count").innerText = copyCount;
 
 
 })
-
-
-
 
 
 
